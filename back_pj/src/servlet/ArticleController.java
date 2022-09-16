@@ -38,6 +38,9 @@ public class ArticleController extends HttpServlet{
 		case "list":
 			doList(request, response);
 			break;	
+		case "write":
+			doWrite(request, response);
+			break;
 		}
 		
 	}
@@ -61,6 +64,7 @@ public class ArticleController extends HttpServlet{
 
 
 	private void doWrite(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		System.out.println("write 도착");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String userName = request.getParameter("userName");
@@ -70,6 +74,6 @@ public class ArticleController extends HttpServlet{
 		Article article = new Article(0, title, content, userName, 0, null);
 		ArticleDaoImpl.getInstance().writeArticle(article);
 		
-		response.sendRedirect("article?action=list");
+		response.sendRedirect("article/write.jsp");
 	}
 }

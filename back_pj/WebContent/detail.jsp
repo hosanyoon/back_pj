@@ -9,7 +9,10 @@
 		allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 		allowfullscreen></iframe>
 	<br>
+	<form action="${ pageContext.request.contextPath }/article" method="post">
+	<input type="hidden" name="action" value="list">
 	<input type="submit" class="btn btn-primary" value="게시글 보기">
+	</form>
 	
 </div>
 <script
