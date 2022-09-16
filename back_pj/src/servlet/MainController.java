@@ -10,9 +10,31 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/main")
 public class MainController extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		process(request, response);
 	}
+	
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		process(request, response);
+	}
+	
+	private void process(HttpServletRequest request, HttpServletResponse response) {
+		String action = request.getParameter("action");
+		
+		switch (action) {
+		case "regist":
+			
+			break;
+		case "update":
+		}
+	}
+	
 }
