@@ -10,4 +10,6 @@ public interface MainDao {
 	public List<Video> selectPartFitVideo(String part);
 
 	public List<Video> getList();
+	
+	public Video getVideo(String youtubeId);
 }

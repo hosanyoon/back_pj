@@ -6,9 +6,9 @@
 	<div>최근 가장 많이 본영상</div>
 	<c:forEach items="${videoList }" var="video">
 		<div>
-			<img
-				src="https://img.youtube.com/vi/${video.youtubeId }/mqdefault.jpg">
-			<br> <a href="detail.jsp">${video.title }</a> <br> <span>${video.fitPartName }</span>
+			<img src="https://img.youtube.com/vi/${video.youtubeId }/mqdefault.jpg">
+			<br> <a href="${pageContext.request.contextPath}/main?action=detail&youtubeId=${video.youtubeId}">${video.title }</a> <br> 
+			<span>${video.fitPartName }</span>
 			<br>
 
 		</div>

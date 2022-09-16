@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import dao.ArticleDao;
 import dao.ArticleDaoImpl;
 import dto.Article;
+import dto.Video;
 
 @WebServlet("/article")
 public class ArticleController extends HttpServlet{
@@ -31,25 +32,24 @@ public class ArticleController extends HttpServlet{
 		
 		switch(action) {
 		
-		case "write":
-			doWrite(request, response);
+		case "detail":
+			doDetail(request, response);
 			break;
 		case "list":
 			doList(request, response);
 			break;	
-		case "detail":
-			doDetail(request, response);
-			break;
-			
 		}
 		
 	}
 
 
 	private void doDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int articleId = Integer.parseInt(request.getParameter("articleId"));
-		Article article = ArticleDaoImpl.getInstance().getArticle(articleId);
-		request.setAttribute("article", article);
+		
+		
+//		int articleId = Integer.parseInt(request.getParameter("articleId"));
+//		Article article = ArticleDaoImpl.getInstance().getArticle(articleId);
+//		Video video = 
+		request.setAttribute("detailVideo", video);
 		request.getRequestDispatcher("article/detail.jsp").forward(request, response);
 		
 	}

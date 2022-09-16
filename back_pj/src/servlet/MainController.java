@@ -43,7 +43,9 @@ public class MainController extends HttpServlet {
 			System.out.println("list도착");
 			doList(request, response);
 			break;
-		case "regist":
+		case "detail":
+			System.out.println("detail 도착");
+			doDetail(request, response);
 			break;
 		case "update":
 			break;
@@ -52,6 +54,15 @@ public class MainController extends HttpServlet {
 	}
 
 	
+
+	private void doDetail(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		System.out.println("detail 시작");
+		String youtubeId = request.getParameter("youtubeId");
+		Video video = MainDaoImpl.getInstance().getVideo(youtubeId);
+		HttpSession session = request.getSession();
+		session.setAttribute("detailVideo", video);
+		response.sendRedirect("detail.jsp");
+	}
 
 	private void doList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파트 선택되어있는지 확인

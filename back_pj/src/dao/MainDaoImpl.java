@@ -23,6 +23,15 @@ public class MainDaoImpl implements MainDao {
 		
 	}
 	
+	public Video getVideo(String youtubeId) {
+		for (Video video : list) {
+			if(youtubeId.equals(video.getYoutubeId())) {
+				return video;
+			}
+		}
+		return null;
+	}
+	
 	public static MainDao getInstance() {
 		if(instance == null ) {
 			instance = new MainDaoImpl();
