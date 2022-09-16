@@ -44,12 +44,9 @@ public class ArticleController extends HttpServlet{
 
 
 	private void doDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-//		int articleId = Integer.parseInt(request.getParameter("articleId"));
-//		Article article = ArticleDaoImpl.getInstance().getArticle(articleId);
-//		Video video = 
-		request.setAttribute("detailVideo", video);
+		int articleId = Integer.parseInt(request.getParameter("articleId"));
+		Article article = ArticleDaoImpl.getInstance().getArticle(articleId);
+		request.setAttribute("article", article);
 		request.getRequestDispatcher("article/detail.jsp").forward(request, response);
 		
 	}
