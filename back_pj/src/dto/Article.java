@@ -20,8 +20,8 @@ public class Article {
 		this.title = title;
 		this.content = content;
 		this.userName = userName;
-		this.viewCnt = viewCnt;
-		this.regDate = regDate;
+		this.viewCnt = 0;
+		this.regDate = new Date();
 	}
 
 	@Override

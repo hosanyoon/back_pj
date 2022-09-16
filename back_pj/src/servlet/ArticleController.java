@@ -41,7 +41,45 @@ public class ArticleController extends HttpServlet{
 		case "write":
 			doWrite(request, response);
 			break;
+		case "modifyform":
+			doModifyform(request, response);
+			break;
+		case "modify":
+			doModify(request, response);
+			break;
+		case "delete" :
+			doRemove(request, response);
 		}
+		
+	}
+	
+	private void doRemove(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		int articleId = Integer.parseInt(request.getParameter("articleId"));
+		ArticleDaoImpl.getInstance().deleteBoard(articleId);
+		response.sendRedirect("article?action=list");
+	}
+
+	private void doModifyform(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("수정폼도착");
+		int articleId = Integer.parseInt(request.getParameter("articleId"));
+		Article article = ArticleDaoImpl.getInstance().getArticle(articleId);
+		request.setAttribute("article", article);
+		request.getRequestDispatcher("article/updateform.jsp").forward(request, response);
+		
+	}
+	private void doModify(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		System.out.println("modify 도착");
+		
+		HttpSession session = request.getSession();
+		
+		Article article = new Article();
+		article.setArticleId(Integer.parseInt(request.getParameter("articleId")));
+		article.setTitle(request.getParameter("title"));
+		article.setContent(request.getParameter("content"));
+		article.setUserName(request.getParameter("userName"));
+		
+		ArticleDaoImpl.getInstance().updateBoard(article);
+		response.sendRedirect("article?action=list");
 		
 	}
 

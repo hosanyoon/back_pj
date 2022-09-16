@@ -23,7 +23,7 @@
 					<tr>
 						<td>${article.articleId }</td>
 						<td><a
-							href="${pageContext.request.contextPath}/ArticleServlet?action=detail&articleId=${article.articleId}"
+							href="${pageContext.request.contextPath}/article?action=detail&articleId=${article.articleId}"
 							class="btn">${article.title }</a></td>
 						<td>${UserManager.getUserName(article.userSeq) }</td>
 						<td>${article.regDate }</td>
@@ -36,7 +36,8 @@
 	<c:if test="${ empty articles or fn:length(articles) == 0 }">
 		<div class="alert alert-primary" role="alert">게시글이 없습니다.</div>
 	</c:if>
-	<a href="${pageContext.request.contextPath }/article/write.jsp" class="btn btn-primary">게시글 등록</a>
+	<a href="${pageContext.request.contextPath }/article/write.jsp"
+		class="btn btn-primary">게시글 등록</a> 
 </div>
 
 <script

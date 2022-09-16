@@ -13,23 +13,14 @@
 		<textarea rows="10" class="form-control" id="content" name="content"
 			disabled readonly>${article.content}</textarea>
 	</div>
-
+	<a href="article?action=modifyform&articleId=${article.articleId }"
+		class="btn btn-success">수정</a> <a
+		href="article?action=delete&articleId=${article.articleId }"
+		class="btn btn-info">삭제</a> <a href="article?action=list"
+		class="btn btn-primary">목록</a>
 	<hr>
-	<div class="mt-3">
-		<h3>댓글 목록</h3>
-		<div class="row">
-			<form>
-				<div class="col">
-					<textarea class="form-control" id="commentContent" name="commentContent">
-					</textarea>
-				</div>
-				<div class="col">
-					<input type="submit" value="저장" class="btn btn-primary">
-				</div>
-			</form>
-		</div>
 
-	</div>
+
 </div>
 
 <script

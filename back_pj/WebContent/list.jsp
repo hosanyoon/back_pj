@@ -12,7 +12,6 @@
 					<div class="card shadow-sm">
 						<img
 							src="https://img.youtube.com/vi/${video.youtubeId }/mqdefault.jpg">
-						<title>Placeholder</title>
 						<rect width="300px" height="250px" fill="#55595c"></rect>
 						<div class="card-body">
 
@@ -51,7 +50,6 @@
 							<div class="card shadow-sm">
 								<img
 									src="https://img.youtube.com/vi/${partvideo.youtubeId }/mqdefault.jpg">
-								<title>Placeholder</title>
 								<rect width="300px" height="250px" fill="#55595c"></rect>
 								<div class="card-body">
 
