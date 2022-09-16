@@ -10,7 +10,7 @@
 		allowfullscreen></iframe>
 	<br>
 	<input type="submit" class="btn btn-primary" value="게시글 보기">
-
+	
 </div>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
