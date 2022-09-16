@@ -8,4 +8,6 @@ public interface MainDao {
 	public List<Video> selectInterestViewFitVideo();
 
 	public List<Video> selectPartFitVideo();
+
+	public List<Video> getList();
 }
