@@ -74,6 +74,7 @@ public class ArticleController extends HttpServlet{
 		Article article = new Article(0, title, content, userName, 0, null);
 		ArticleDaoImpl.getInstance().writeArticle(article);
 		
-		response.sendRedirect("article/write.jsp");
+		response.sendRedirect("article?action=list");
+		
 	}
 }

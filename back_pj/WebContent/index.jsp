@@ -2,9 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="./include/header.jsp"%>
 
+<div style="text-align:center">
+	<img src="https://health.chosun.com/site/data/img_dir/2018/03/07/2018030700812_2.jpg">
+</div>
 <form action="main" method="post">
-<input type="hidden" name="action" value="list">
-<input type="submit" class="btn btn-primary" value="홈페이지 입장">
+	<div class="mt-5 container">
+		<div class="row">
+			<div class="col text-center">
+				<input type="hidden" name="action" value="list"> <input
+					type="submit" class="btn btn-primary" value="SSAFIT에 오신걸 환영합니다">
+			</div>
+		</div>
+	</div>
 </form>
 
 <script

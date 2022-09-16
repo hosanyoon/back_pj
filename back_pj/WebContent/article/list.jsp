@@ -36,11 +36,7 @@
 	<c:if test="${ empty articles or fn:length(articles) == 0 }">
 		<div class="alert alert-primary" role="alert">게시글이 없습니다.</div>
 	</c:if>
-	<form action="${ pageContext.request.contextPath }/article"
-		method="post">
-		<input type="hidden" name="action" value="write"> <input
-			type="submit" class="btn btn-primary" value="게시글 등록">
-	</form>
+	<a href="${pageContext.request.contextPath }/article/write.jsp" class="btn btn-primary">게시글 등록</a>
 </div>
 
 <script
